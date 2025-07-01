@@ -133,4 +133,25 @@ export const authService = {
   },
 };
 
+// Task API services
+export const taskService = {
+  // Get all tasks
+  getAllTasks: async () => {
+    const response = await api.get('/tasks');
+    return response.data;
+  },
+
+  // Create a new task
+  createTask: async (taskData) => {
+    const response = await api.post('/tasks', taskData);
+    return response.data;
+  },
+
+  // Delete a task
+  deleteTask: async (id) => {
+    const response = await api.delete(`/tasks/${id}`);
+    return response.data;
+  },
+};
+
 export default api; 
